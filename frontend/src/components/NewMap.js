@@ -2,6 +2,7 @@ import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import LocationInfo from "./locationInfo";
+import LocationWindow from "./locationWindow";
 const mapStyles = {
   width: "100%",
   height: "100%",
@@ -49,6 +50,12 @@ const NewMap = (props) => {
         address={boxInfo.address}
         open={open}
         setOpen={setOpen}
+      />
+      <LocationWindow
+      restaurants={restaurants}
+      open={open}
+      setOpen={setOpen}
+      
       />
       <Map
         google={props.google}
